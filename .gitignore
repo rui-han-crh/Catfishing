@@ -2,8 +2,19 @@
 .idea/*
 .git/*
 .sln/*
+
 Build/*
 DerivedDataCache/*
 Intermediate/*
 Plugins/*/Intermediate/*
 Saved/*
+
+# Generate locally
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
