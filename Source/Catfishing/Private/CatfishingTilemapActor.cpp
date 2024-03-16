@@ -192,22 +192,6 @@ bool ACatfishingTilemapActor::RemoveFishnet(FIntPoint TilePosition)
 	return true;
 }
 
-int32 ACatfishingTilemapActor::GetNumFishnets()
-{
-	// Get the number of fishnets
-	int32 NumFishnets = 0;
-
-	for (FTileData& TileData : MapTileData)
-	{
-		if (TileData.HasFishnet)
-		{
-			NumFishnets++;
-		}
-	}
-
-	return NumFishnets;
-}
-
 FTileData *ACatfishingTilemapActor::GetTileData(FIntPoint TilePosition)
 {
 	// Check if the tile is within bounds
