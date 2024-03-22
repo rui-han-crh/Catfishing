@@ -192,6 +192,11 @@ bool ACatfishingTilemapActor::RemoveFishnet(FIntPoint TilePosition)
 	return true;
 }
 
+TArray<FTileData> ACatfishingTilemapActor::GetTileDataArray()
+{
+	return MapTileData;
+}
+
 FTileData *ACatfishingTilemapActor::GetTileData(FIntPoint TilePosition)
 {
 	// Check if the tile is within bounds
