@@ -89,7 +89,11 @@ public:
 
 	// Gets a copy of the 1D tile data array.
 	UFUNCTION(BlueprintPure, Category = "Tilemap")
-	TArray<FTileData> GetTileDataArray();
+	TArray<FTileData> GetMapTileData();
+
+	// Sets the tile data array.
+	UFUNCTION(BlueprintCallable, Category = "Tilemap")
+	void SetMapTileData(TArray<FTileData> TileData);
 
 private:
 	// Helper function to get the tile data at the given position

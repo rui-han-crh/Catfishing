@@ -4,9 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "CatfishingTilemapActor.h"
 #include "TilemapPawn.generated.h"
-
-
 
 UCLASS()
 class CATFISHING_API ATilemapPawn : public APawn
@@ -14,7 +13,7 @@ class CATFISHING_API ATilemapPawn : public APawn
 	GENERATED_BODY()
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FStartMove, ATilemapPawn*, Pawn, const FIntPoint&, TilePosition, const FVector&, Direction);
-	
+
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FEndMove, ATilemapPawn*, Pawn, const FIntPoint&, TilePosition, const FVector&, Direction);
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActionInitialize, ATilemapPawn*, Pawn);
@@ -37,6 +36,13 @@ public:
 	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "TilemapPawn")
 	FActionFinalize OnActionFinalize;
 
+	// Tilemap
+	UPROPERTY(BlueprintReadWrite, Category = "TilemapPawn")
+	class ACatfishingTilemapActor* Tilemap;
+
+	// Current Tile Position
+	UPROPERTY(BlueprintReadWrite, Category = "TilemapPawn")
+	FIntPoint TilePosition;
 
 protected:
 	// Called when the game starts or when spawned
@@ -48,5 +54,4 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 };

@@ -192,9 +192,21 @@ bool ACatfishingTilemapActor::RemoveFishnet(FIntPoint TilePosition)
 	return true;
 }
 
-TArray<FTileData> ACatfishingTilemapActor::GetTileDataArray()
+TArray<FTileData> ACatfishingTilemapActor::GetMapTileData()
 {
 	return MapTileData;
+}
+
+void ACatfishingTilemapActor::SetMapTileData(TArray<FTileData> TileData)
+{
+	// Check if the size of the tile data is correct
+	if (TileData.Num() != MapWidth * MapHeight)
+	{
+		// Log an error with the current size of the tile data
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Tile data size is incorrect, expected %d, got %d"), MapWidth * MapHeight, TileData.Num()));
+		return;
+	}
+	MapTileData = TileData;
 }
 
 FTileData *ACatfishingTilemapActor::GetTileData(FIntPoint TilePosition)

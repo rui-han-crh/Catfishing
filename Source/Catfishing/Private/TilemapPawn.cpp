@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "TilemapPawn.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ATilemapPawn::ATilemapPawn()
@@ -15,7 +15,19 @@ ATilemapPawn::ATilemapPawn()
 void ATilemapPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	// Get the catfishing tilemap
+	Tilemap = Cast<ACatfishingTilemapActor>(UGameplayStatics::GetActorOfClass(GetWorld(), ACatfishingTilemapActor::StaticClass()));
+
+	// Set the current tile position based on the tilemap
+	if (Tilemap)
+	{
+		TilePosition = Tilemap->WorldToTilePosition(GetActorLocation());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Tilemap not found!"));
+	}
 }
 
 // Called every frame
@@ -29,6 +41,4 @@ void ATilemapPawn::Tick(float DeltaTime)
 void ATilemapPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
-
