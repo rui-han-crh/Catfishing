@@ -44,6 +44,10 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "TilemapPawn")
 	FIntPoint TilePosition;
 
+	// Pivot Scene Component
+	UPROPERTY(BlueprintReadWrite, Category = "TilemapPawn")
+	class USceneComponent* Pivot;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
