@@ -58,4 +58,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// Assign the pawn's tile position using the tilemap
+	UFUNCTION(BlueprintCallable, Category = "TilemapPawn")
+	FIntPoint AssignTilePosition();
 };

@@ -47,3 +47,9 @@ void ATilemapPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
+
+FIntPoint ATilemapPawn::AssignTilePosition()
+{
+	TilePosition = Tilemap->WorldToTilePosition(GetActorLocation());
+	return TilePosition;
+}
