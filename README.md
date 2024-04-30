@@ -17,20 +17,14 @@ We presented this game during the School of Computing Term Project Showcase (STe
 
 ## Acknowledgements
 
-**Produced by:**
-Chen Ruihan
-Sheemo
-Law Sean Meng
-Cloud
+**Produced by:** Chen Ruihan, Sheemo, Law Sean Meng, Cloud
 
-**Illustrated by:**
-Aaron
+**Illustrated by:** Aaron
 
-**Music:**
-Underwater Theme by Cleyton Kauffman
+**Music:** Underwater Theme by Cleyton Kauffman
 
 **Special Thanks:**
-We'd like to give our thanks to the developers of Paquerette Down the Bunburrows for the inspiration. We studied and referenced the game jam build of their game during conceptualization, here on itch.io!
+We'd like to give our thanks to the developers of Paquerette Down the Bunburrows for the inspiration. We studied and referenced the game jam build of their game during conceptualization.
 
 ## Contact
 
